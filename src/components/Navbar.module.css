@@ -1,0 +1,183 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white);
+
+  font-size: 0.5vw;
+  padding: 5em;
+  padding-right: 0em;
+}
+
+.logo {
+  width: 5em;
+  height: auto;
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.nav span {
+  width: 43%;
+  height: 0.1em;
+  background-color: hsl(0 0% 100% / 0.3);
+  margin-right: -15em;
+  z-index: 2;
+}
+
+.hamburger {
+  display: none;
+}
+
+.ul {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: hsl(0 0% 100% / 0.1);
+  backdrop-filter: blur(1em);
+  font-size: 1vw;
+  padding: 2em 8em;
+  padding-right: 7em;
+}
+
+.ul > .close {
+  position: absolute;
+  display: none;
+}
+
+.ul > li {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  margin-inline: 2em;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: lighter;
+}
+
+.ul > li::after {
+  content: " ";
+  width: 100%;
+  height: 0.15em;
+  background-color: white;
+  position: absolute;
+  bottom: -160%;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.ul > li:hover::after {
+  opacity: 1;
+}
+
+/* CSS rules for tablets */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .nav {
+    font-size: 1vw;
+    padding-top: 0em;
+  }
+
+  .nav > span {
+    display: none;
+  }
+
+  .ul {
+    font-size: 1.5vw;
+    padding: 2.5em;
+  }
+
+  .ul > li::after {
+    bottom: -210%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .nav {
+    font-size: 1vw;
+    padding: 5em 5em;
+    position: relative;
+  }
+
+  .logo {
+    width: 6em;
+    height: auto;
+    animation: rotate 4s linear infinite;
+  }
+
+  .nav > span {
+    display: none;
+  }
+
+  .nav > .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .ul {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    height: 100vh;
+    width: 60vh;
+    font-size: 4vw;
+    padding: 5em 3em;
+    padding-right: 0em;
+
+    transform: translateX(100%);
+    transition: transform 300ms ease-in-out;
+  }
+
+  .ul.open {
+    transform: translateX(0%);
+  }
+
+  .ul > .close {
+    display: block;
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    cursor: pointer;
+  }
+
+  .ul > .close img {
+    width: 1em;
+    height: auto;
+  }
+
+  .ul > li {
+    margin: 0;
+    margin-bottom: 1.5em;
+    width: 100%;
+  }
+
+  .ul > li::after {
+    content: " ";
+    width: 0.1em;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+  }
+}
