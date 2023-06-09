@@ -7,6 +7,7 @@
   font-size: 0.5vw;
   padding: 5em;
   padding-right: 0em;
+  z-index: 2;
 }
 
 .logo {
@@ -17,20 +18,20 @@
 
 @keyframes rotate {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(360deg);
   }
   50% {
     transform: rotate(180deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
   }
 }
 
 .nav span {
   width: 43%;
   height: 0.1em;
-  background-color: hsl(0 0% 100% / 0.3);
+  background-color: hsl(0 0% 100% / 0.1);
   margin-right: -15em;
   z-index: 2;
 }
@@ -136,7 +137,7 @@
     align-items: flex-start;
 
     height: 100vh;
-    width: 60vh;
+    width: 70vw;
     font-size: 4vw;
     padding: 5em 3em;
     padding-right: 0em;

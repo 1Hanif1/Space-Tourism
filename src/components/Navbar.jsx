@@ -3,12 +3,13 @@ import hamburger from "../assets/shared/icon-hamburger.svg";
 import close from "../assets/shared/icon-close.svg";
 import classes from "./Navbar.module.css";
 export default function Navbar() {
-  const navbar = document.querySelector("#navbar");
   const openMenu = function () {
+    const navbar = document.querySelector("#navbar");
     navbar.classList.add(classes.open);
   };
 
   const closeMenu = function () {
+    const navbar = document.querySelector("#navbar");
     navbar.classList.remove(classes.open);
   };
   return (

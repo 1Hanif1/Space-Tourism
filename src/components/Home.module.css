@@ -1,0 +1,159 @@
+.section {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+
+  font-size: 1vw;
+  padding: 10em 10em 5em;
+}
+
+.left {
+  font-size: 0.85em;
+}
+
+.left p {
+  width: 100%;
+}
+
+.left p:nth-child(1) {
+  color: var(--purple);
+  font-size: 2.6em;
+  letter-spacing: 0.15em;
+  font-family: var(--font1);
+}
+.left p:nth-child(2) {
+  color: var(--white);
+  font-family: var(--font2);
+  font-size: 12.5em;
+}
+.left p:nth-child(3) {
+  color: var(--purple);
+  font-family: var(--font3);
+  font-size: 1.5em;
+  line-height: 1.8;
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  cursor: pointer;
+
+  background-color: white;
+  font-family: var(--font2);
+  font-size: 1.75em;
+  width: 8em;
+  height: 8em;
+  border-radius: 50%;
+
+  transition: transform 300ms ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+.button::after {
+  position: absolute;
+  content: " ";
+  z-index: -1;
+
+  background-color: hsl(0, 0%, 100%, 0.2);
+  width: 8em;
+  height: 8em;
+  border-radius: 50%;
+
+  transition: width 300ms ease-in-out, height 300ms ease-in-out;
+}
+
+.button:hover::after {
+  width: 13em;
+  height: 13em;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .section {
+    grid-template-columns: 100%;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* margin-bottom: 20em; */
+  }
+
+  .left p {
+    text-align: center;
+    width: 100%;
+  }
+
+  .left p:nth-child(1) {
+    font-size: 4em;
+    letter-spacing: 0.15em;
+  }
+  .left p:nth-child(2) {
+    font-size: 25em;
+  }
+  .left p:nth-child(3) {
+    font-size: 2.5em;
+    line-height: 1.8;
+    width: 70%;
+  }
+
+  .right {
+    margin-top: 8em;
+    font-size: 1.2vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .section {
+    grid-template-columns: 100%;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* margin-bottom: 20em; */
+    font-size: 1.2vw;
+  }
+
+  .left p {
+    text-align: center;
+    width: 100%;
+  }
+
+  .left p:nth-child(1) {
+    font-size: 4em;
+    letter-spacing: 0.15em;
+  }
+  .left p:nth-child(2) {
+    font-size: 15em;
+    margin-block: 0.25em;
+  }
+  .left p:nth-child(3) {
+    font-size: 2.5em;
+    line-height: 1.8;
+    width: 100%;
+  }
+
+  .right {
+    margin-top: 8em;
+    font-size: 3vw;
+  }
+}

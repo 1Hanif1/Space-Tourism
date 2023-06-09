@@ -12,3 +12,9 @@ main {
     background-image: url(./assets//home/background-home-tablet.jpg);
   }
 }
+
+@media only screen and (max-width: 768px) {
+  main {
+    background-image: url(./assets//home/background-home-mobile.jpg);
+  }
+}
