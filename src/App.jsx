@@ -1,43 +1,25 @@
-import * as React from "react";
-
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import "./App.css";
 import Destination from "./components/Destination";
 
-const changeTab = function (tabName) {
-  console.log(tabName);
-};
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Navigate to="/home" />,
-  },
-  {
-    path: "/home",
-    element: <Home />,
-  },
-  {
-    path: "/destination",
-    element: <Destination />,
-  },
-]);
-
 function App() {
+  const changeTab = function (tabName) {
+    const main = document.querySelector("main");
+  };
   return (
-    <main>
-      <Navbar changeTabFunction={changeTab} />
-      <React.StrictMode>
-        <RouterProvider router={router} />
-      </React.StrictMode>
-    </main>
+    <BrowserRouter>
+      <main>
+        <Navbar changeTab={changeTab} />
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/destination" element={<Destination />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
   );
 }
 

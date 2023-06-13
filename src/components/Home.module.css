@@ -20,17 +20,31 @@
   font-size: 2.6em;
   letter-spacing: 0.15em;
   font-family: var(--font1);
+  animation: slideDown 600ms ease-in-out forwards;
 }
 .left p:nth-child(2) {
   color: var(--white);
   font-family: var(--font2);
   font-size: 12.5em;
+  animation: slideDown 1200ms ease-in-out forwards;
 }
 .left p:nth-child(3) {
   color: var(--purple);
   font-family: var(--font3);
   font-size: 1.5em;
   line-height: 1.8;
+  animation: slideDown 1800ms ease-in-out forwards;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
 }
 
 .right {
@@ -56,6 +70,18 @@
   border-radius: 50%;
 
   transition: transform 300ms ease-in-out;
+  animation: zoomOut 1800ms ease-in-out forwards;
+}
+
+@keyframes zoomOut {
+  from {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .button:hover {
